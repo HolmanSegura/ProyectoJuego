@@ -22,6 +22,9 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -31,13 +34,15 @@ public class Logica extends JPanel implements Runnable, KeyListener {
 
     private Image carro, carro1, carro2, carro3, carro4, carro5, carro6, carro7, carro8, pista, arbusto, pregunta;
     private Thread hilo;
-    private int xC, yC, xP, yP, yV, yQ, total = 0, tiempo = 120000, aux = 0, min, seg, aux2;
+    private int xC, yC, xP, yP, yV, yQ, total = 0, tiempo = 120000, tiempo2 = 120000, aux = 0, min, seg, aux2;
     double puntos = 0;
     private final int RETARDO = 5;
     private boolean mov = true;
     private final static Color verde = new Color(34, 177, 76);
     DecimalFormat dec = new DecimalFormat("#.0");
     public ArrayList<Pregunta> preguntas = new ArrayList();
+    Calendar calendario;
+    Thread h1;
 
     public Logica() {
 
@@ -352,30 +357,39 @@ public class Logica extends JPanel implements Runnable, KeyListener {
             ciclo();
             cicloP();
             repaint();
+            //   run2();
             try {
                 Thread.sleep(RETARDO);
                 puntuacion(0.1);
                 tiempo(5);
+
                 //System.out.println("puntos" + dec.format(puntos) + " " + tiempo(5));
                 if (min <= 0 && seg <= 0) {
+
                     File archivo;
                     FileWriter escribir;
                     PrintWriter linea;
                     String nom = "", eq = "";
+                    String fecha;
+                    Thread ct = Thread.currentThread();
+                    Calendar calendar = Calendar.getInstance();
+                    String[] dias = {"", "Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"};
+                    String[] meses = {"", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
+                    fecha = ((dias[(calendar.get(7))] + " - " + (calendar.get(5)) + " de " + meses[(calendar.get(2) + 1)] + " del " + (calendar.get(1)) + " ,"));
                     archivo = new File("Base de Datos.txt");
                     if (!archivo.exists()) {
                         try {
                             archivo.createNewFile();
-                            nom = JOptionPane.showInputDialog(null, "Nombre" , " Nombre del Usuario" );
-                                    
-                            eq = JOptionPane.showInputDialog(null, "Equipo" , " Nombre del Equipo" );
-                                   
+                            nom = JOptionPane.showInputDialog(null, "Nombre", " Nombre del Usuario");
+
+                            eq = JOptionPane.showInputDialog(null, "Equipo", " Nombre del Equipo");
+
                             escribir = new FileWriter(archivo, true);
                             linea = new PrintWriter(escribir);
-                            linea.println("Nombre: "+nom);
-                            linea.println("Equipo: "+eq);
-                            linea.println("Puntos: "+puntos);
-                          //  linea.println("Tiempo: "+tiempo);
+                            linea.println("Nombre: " + nom);
+                            linea.println("Equipo: " + eq);
+                            linea.println("Puntos: " + puntos);
+                            linea.println("Fecha: " + fecha);
                             linea.close();
                             escribir.close();
                         } catch (IOException ex) {
@@ -383,24 +397,24 @@ public class Logica extends JPanel implements Runnable, KeyListener {
                         }
                     } else {
                         try {
-                         nom = JOptionPane.showInputDialog(null, "Nombre", " Nombre del Usuario");
-                                
-                        eq = JOptionPane.showInputDialog(null, "Equipo", " Nombre del Equipo" );
-                                
-                        escribir = new FileWriter(archivo, true);
-                        linea = new PrintWriter(escribir);
-                        linea.println("-------------------------");
-                        linea.println("-------------------------");
-                        linea.println("Nombre: "+nom);
-                        linea.println("Equipo: "+eq);
-                        linea.println("Puntos: "+puntos);
-                        //linea.println("Tiempo: "+tiempo);
-                        linea.close();
-                        escribir.close();
+                            nom = JOptionPane.showInputDialog(null, "Nombre", " Nombre del Usuario");
+
+                            eq = JOptionPane.showInputDialog(null, "Equipo", " Nombre del Equipo");
+
+                            escribir = new FileWriter(archivo, true);
+                            linea = new PrintWriter(escribir);
+                            linea.println("-------------------------");
+                            linea.println("-------------------------");
+                            linea.println("Nombre: " + nom);
+                            linea.println("Equipo: " + eq);
+                            linea.println("Puntos: " + puntos);
+                            linea.println("Fecha: " + fecha);
+                            linea.close();
+                            escribir.close();
                         } catch (IOException ex) {
                             Logger.getLogger(Logica.class.getName()).log(Level.SEVERE, null, ex);
                         }
-                        
+
                     }
                     JOptionPane.showMessageDialog(null, "Fin del juego!");
 
@@ -516,4 +530,5 @@ public class Logica extends JPanel implements Runnable, KeyListener {
         }
         return cad;
     }
+
 }

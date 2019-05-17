@@ -1,10 +1,4 @@
-Nombre: Hector
-Equipo: Udec Faca
-Puntos: 520.1000000000554
-Tiempo: -3000
--------------------------
--------------------------
-Nombre: Holman
-Equipo: Udec Chia
-Puntos: 1833.099999999667
-Tiempo: -8000
+Nombre:  Nombre del Usuario
+Equipo: udec
+Puntos: 360.1000000000134
+Fecha: Viernes - 17 de Mayo del 2019 ,
