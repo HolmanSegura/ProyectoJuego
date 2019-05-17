@@ -14,11 +14,18 @@ import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import javax.swing.JLabel;
+import java.util.LinkedList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import javax.swing.JPopupMenu;
 
 public class Logica extends JPanel implements Runnable, KeyListener {
 
@@ -33,7 +40,7 @@ public class Logica extends JPanel implements Runnable, KeyListener {
     public ArrayList<Pregunta> preguntas = new ArrayList();
 
     public Logica() {
-       
+
         preguntas.add(new Pregunta("Cuantas flores hay en dos docenas de rosas?", "\na.24\nb.32\nc.6\nd.12", "a"));
         preguntas.add(new Pregunta("Por cuanto tenemos que multiplicar el 6 para obtener 36?", "\na.4\nb.6\nc.8\nd.3", "b"));
         preguntas.add(new Pregunta("Cual es el resultado de 3.15*100?", "\na.3150\nb.31.50\nc.315\nd.0.315", "c"));
@@ -57,7 +64,7 @@ public class Logica extends JPanel implements Runnable, KeyListener {
 
         setBackground(verde);
         setDoubleBuffered(true);
-        
+
         pista = new ImageIcon(this.getClass().getResource("/imagenes/pista.jpg")).getImage();
         carro = new ImageIcon(this.getClass().getResource("/imagenes/carro.jpg")).getImage();
         arbusto = new ImageIcon(this.getClass().getResource("/imagenes/arbusto.jpg")).getImage();
@@ -335,6 +342,8 @@ public class Logica extends JPanel implements Runnable, KeyListener {
             yV = -50;
         }
     }
+    public String dato;
+    public String cadena;
 
     @Override
     public void run() {
@@ -349,9 +358,54 @@ public class Logica extends JPanel implements Runnable, KeyListener {
                 tiempo(5);
                 //System.out.println("puntos" + dec.format(puntos) + " " + tiempo(5));
                 if (min <= 0 && seg <= 0) {
+                    File archivo;
+                    FileWriter escribir;
+                    PrintWriter linea;
+                    String nom = "", eq = "";
+                    archivo = new File("Base de Datos.txt");
+                    if (!archivo.exists()) {
+                        try {
+                            archivo.createNewFile();
+                            nom = JOptionPane.showInputDialog(null, "Nombre" , " Nombre del Usuario" );
+                                    
+                            eq = JOptionPane.showInputDialog(null, "Equipo" , " Nombre del Equipo" );
+                                   
+                            escribir = new FileWriter(archivo, true);
+                            linea = new PrintWriter(escribir);
+                            linea.println("Nombre: "+nom);
+                            linea.println("Equipo: "+eq);
+                            linea.println("Puntos: "+puntos);
+                          //  linea.println("Tiempo: "+tiempo);
+                            linea.close();
+                            escribir.close();
+                        } catch (IOException ex) {
+                            Logger.getLogger(Logica.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    } else {
+                        try {
+                         nom = JOptionPane.showInputDialog(null, "Nombre", " Nombre del Usuario");
+                                
+                        eq = JOptionPane.showInputDialog(null, "Equipo", " Nombre del Equipo" );
+                                
+                        escribir = new FileWriter(archivo, true);
+                        linea = new PrintWriter(escribir);
+                        linea.println("-------------------------");
+                        linea.println("-------------------------");
+                        linea.println("Nombre: "+nom);
+                        linea.println("Equipo: "+eq);
+                        linea.println("Puntos: "+puntos);
+                        //linea.println("Tiempo: "+tiempo);
+                        linea.close();
+                        escribir.close();
+                        } catch (IOException ex) {
+                            Logger.getLogger(Logica.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                        
+                    }
                     JOptionPane.showMessageDialog(null, "Fin del juego!");
-                    Thread.sleep(1500);
+
                     System.exit(0);
+
                 }
             } catch (InterruptedException err) {
                 System.out.println(err);
@@ -373,6 +427,40 @@ public class Logica extends JPanel implements Runnable, KeyListener {
                 }
             } catch (InterruptedException err) {
                 System.out.println(err);
+            }
+        }
+    }
+
+    public void guardar() {
+        String dato; //variable para almacenar nombre y apellido
+        String cadena; //nombre;apellido
+        FileWriter fichero = null;  //objeto principal (archivo)
+        PrintWriter linea = null;   //objeto de contenido de archivo
+
+        try {
+
+            fichero = new FileWriter("f:/ejemplo.txt", true); //crea el archivo 
+            linea = new PrintWriter(fichero); //apunta el PrintWriter al archivo creado
+            // Inicia captura de datos del usuario
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            System.out.println("Digite nombre:");
+            dato = br.readLine();
+            cadena = dato + ";";
+            System.out.println("Digite apellido:");
+            dato = br.readLine();
+            cadena = cadena + dato + ";";
+
+            linea.println(cadena); //escribiendo en el archivo
+
+        } catch (IOException e) {
+            System.out.print("Error creando archivo");
+        } finally {
+            try {
+                if (fichero != null) {
+                    fichero.close();
+                }
+            } catch (IOException e1) {
+                System.out.print("Error cerrando archivo");
             }
         }
     }
