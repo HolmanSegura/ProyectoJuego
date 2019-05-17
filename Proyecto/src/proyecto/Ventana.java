@@ -19,7 +19,7 @@ public class Ventana extends JFrame {
         setResizable(false);
         add(new Logica());
         setVisible(true);
-
+        
     }
 
     //METODO PRINCIPAL - SERA BUSCADO AL EJECUTAR UN PROGRAMA EN JAVA

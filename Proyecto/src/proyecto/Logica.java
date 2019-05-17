@@ -65,6 +65,7 @@ public class Logica extends JPanel implements Runnable, KeyListener {
         yQ = 0;
         addKeyListener(this);
         setFocusable(true);
+
     }
 
     public void keyPressed(KeyEvent e) {
@@ -158,6 +159,82 @@ public class Logica extends JPanel implements Runnable, KeyListener {
     public boolean colisionC() {
         if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 200, yV + 10, 54, 1))) {
             return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 70, yV - 590, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 200, yV - 800, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 84, yV - 1200, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 56, yV - 1600, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 180, yV - 1600, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 120, yV - 1900, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 90, yV - 2300, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 200, yV - 2500, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 70, yV - 2800, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 180, yV - 3200, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 200, yV - 3800, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 74, yV - 3800, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 90, yV - 4100, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 200, yV - 4500, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 70, yV - 4900, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 156, yV - 5000, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 220, yV - 5300, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 98, yV - 5800, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 220, yV - 6100, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 56, yV - 6400, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 180, yV - 6900, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 120, yV - 7500, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 90, yV - 7900, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 180, yV - 8300, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 120, yV - 8900, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 90, yV - 9400, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 200, yV - 9800, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 70, yV - 10000, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 180, yV - 10400, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 200, yV - 10900, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 74, yV - 11500, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 200, yV - 11900, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 70, yV - 12500, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 200, yV - 12900, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 84, yV - 13300, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 56, yV - 13800, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 180, yV - 14200, 54, 1))) {
+            return true;
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 120, yV - 14400, 54, 1))) {
+            return true;
         }
         return false;
     }
@@ -189,13 +266,44 @@ public class Logica extends JPanel implements Runnable, KeyListener {
         g2.drawImage(pregunta, xP + 90, yV - 12400, null);
 
         g2.drawImage(carro1, xP + 200, yV - 100, null);
-        g2.drawImage(carro1, xP + 70, yV - 690, null);
-        g2.drawImage(carro1, xP + 200, yV - 900, null);
-        g2.drawImage(carro1, xP + 84, yV - 1300, null);
+        g2.drawImage(carro6, xP + 70, yV - 690, null);
+        g2.drawImage(carro3, xP + 200, yV - 900, null);
+        g2.drawImage(carro4, xP + 84, yV - 1300, null);
         g2.drawImage(carro1, xP + 56, yV - 1700, null);
-        g2.drawImage(carro1, xP + 180, yV - 1700, null);
-        g2.drawImage(carro1, xP + 120, yV - 2000, null);
-        g2.drawImage(carro1, xP + 90, yV - 2400, null);
+        g2.drawImage(carro5, xP + 180, yV - 1700, null);
+        g2.drawImage(carro6, xP + 120, yV - 2000, null);
+        g2.drawImage(carro8, xP + 90, yV - 2400, null);
+        g2.drawImage(carro1, xP + 200, yV - 2600, null);
+        g2.drawImage(carro2, xP + 70, yV - 2900, null);
+        g2.drawImage(carro7, xP + 180, yV - 3300, null);
+        g2.drawImage(carro4, xP + 200, yV - 3900, null);
+        g2.drawImage(carro1, xP + 74, yV - 3900, null);
+        g2.drawImage(carro8, xP + 90, yV - 4200, null);
+        g2.drawImage(carro1, xP + 200, yV - 4600, null);
+        g2.drawImage(carro2, xP + 70, yV - 5000, null);
+        g2.drawImage(carro5, xP + 156, yV - 5100, null);
+        g2.drawImage(carro8, xP + 220, yV - 5400, null);
+        g2.drawImage(carro6, xP + 98, yV - 5900, null);
+        g2.drawImage(carro4, xP + 220, yV - 6200, null);
+        g2.drawImage(carro1, xP + 56, yV - 6500, null);
+        g2.drawImage(carro5, xP + 180, yV - 7000, null);
+        g2.drawImage(carro6, xP + 120, yV - 7600, null);
+        g2.drawImage(carro8, xP + 90, yV - 8000, null);
+        g2.drawImage(carro5, xP + 180, yV - 8400, null);
+        g2.drawImage(carro6, xP + 120, yV - 9000, null);
+        g2.drawImage(carro8, xP + 90, yV - 9500, null);
+        g2.drawImage(carro1, xP + 200, yV - 9900, null);
+        g2.drawImage(carro2, xP + 70, yV - 10100, null);
+        g2.drawImage(carro7, xP + 180, yV - 10500, null);
+        g2.drawImage(carro4, xP + 200, yV - 11000, null);
+        g2.drawImage(carro1, xP + 74, yV - 11600, null);
+        g2.drawImage(carro1, xP + 200, yV - 12000, null);
+        g2.drawImage(carro6, xP + 70, yV - 12600, null);
+        g2.drawImage(carro3, xP + 200, yV - 13000, null);
+        g2.drawImage(carro4, xP + 84, yV - 13400, null);
+        g2.drawImage(carro1, xP + 56, yV - 13900, null);
+        g2.drawImage(carro5, xP + 180, yV - 14300, null);
+        g2.drawImage(carro6, xP + 120, yV - 14500, null);
         //Toolkit.getDefaultToolkit().sync();
         //g.dispose();
     }
@@ -222,7 +330,7 @@ public class Logica extends JPanel implements Runnable, KeyListener {
             cicloP();
             repaint();
             try {
-                Thread.sleep(1);
+                Thread.sleep(RETARDO);
                 puntuacion(0.1);
                 System.out.println("puntos" + dec.format(puntos) + " " + tiempo(5));
                 if (min <= 0 && seg <= 0) {
