@@ -2,3 +2,15 @@ Nombre:  Nombre del Usuario
 Equipo: udec
 Puntos: 360.1000000000134
 Fecha: Viernes - 17 de Mayo del 2019 ,
+-------------------------
+-------------------------
+Nombre: jorge
+Equipo: azul
+Puntos: 1373.0999999998467
+Fecha: Viernes - 17 de Mayo del 2019 ,
+-------------------------
+-------------------------
+Nombre:  Nombre del Usuario
+Equipo:  Nombre del Equipo
+Puntos: 730.1000000000975
+Fecha: Viernes - 17 de Mayo del 2019 ,

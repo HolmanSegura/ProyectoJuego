@@ -4,6 +4,7 @@ package proyecto;
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
+ *
  */
 import java.awt.Color;
 import java.awt.Graphics;
@@ -96,41 +97,16 @@ public class Logica extends JPanel implements Runnable, KeyListener {
 
         int key = e.getKeyCode();
 
-        if (key == KeyEvent.VK_ENTER) {
-            //System.out.println("Presion� Enter!");
-        }
-        if (key == KeyEvent.VK_SPACE) {
-            //System.out.println("Presion� Espacio!");
-        }
-
-        if (key == KeyEvent.VK_UP) {
-            if (yC > 0 + 5) {
-                yC -= 10;
-            }
-            //System.out.println("Presion� UP!");
-        }
-
-        if (key == KeyEvent.VK_UP) {
-            if (yC > 0 + 5) {
-                yC -= 10;
-            }
-            //System.out.println("Presion� UP!");
-        }
-
-        if (key == KeyEvent.VK_DOWN) {
-            if (yC < 560 - 130) {
-                yC += 10;
-            }
-            //System.out.println("Presion� DOWN!");
-        }
         if (key == KeyEvent.VK_LEFT) {
             if (xC > 260 + 5) {
+                carro = new ImageIcon(this.getClass().getResource("/imagenes/carroI.jpg")).getImage();
                 xC -= 10;
             }
             //System.out.println("Presion� LEFT!");
         }
         if (key == KeyEvent.VK_RIGHT) {
             if (xC < 610 - 125) {
+                carro = new ImageIcon(this.getClass().getResource("/imagenes/carroD.jpg")).getImage();
                 xC += 10;
             }
             //System.out.println("Presion� RIGHT!");
@@ -140,7 +116,15 @@ public class Logica extends JPanel implements Runnable, KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
-        //System.out.println("Solt� la tecla =" + KeyEvent.getKeyText(e.getKeyCode()));
+
+        int key = e.getKeyCode();
+
+        if (key == KeyEvent.VK_LEFT) {
+            carro = new ImageIcon(this.getClass().getResource("/imagenes/carro.jpg")).getImage();
+        }
+        if (key == KeyEvent.VK_RIGHT) {
+            carro = new ImageIcon(this.getClass().getResource("/imagenes/carro.jpg")).getImage();
+        }
     }
 
     @Override
