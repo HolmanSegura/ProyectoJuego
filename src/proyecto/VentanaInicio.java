@@ -5,6 +5,7 @@
  */
 package proyecto;
 
+import javax.swing.JOptionPane;
 import proyecto.Ventana;
 
 /**
@@ -49,6 +50,11 @@ public class VentanaInicio extends javax.swing.JFrame {
         jButton2.setText("Puntajes");
 
         jButton3.setText("Instrucciones");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Salir :C");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -72,22 +78,21 @@ public class VentanaInicio extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(154, 154, 154)
                         .addComponent(jButton2)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 163, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(28, 28, 28)
-                                .addComponent(jLabel1))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(145, 145, 145)
-                                .addComponent(jButton3)))
+                        .addGap(28, 28, 28)
+                        .addComponent(jLabel1)
                         .addGap(0, 27, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton4)))
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(143, 143, 143)
+                .addComponent(jButton3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,6 +131,10 @@ public class VentanaInicio extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        JOptionPane.showMessageDialog(null, "Objetivos de juego\n1. Esquivar autos para no perder tiempo de combustible\n    -Si se choca con un auto pierde 10 segundos de combustible\n2. Recoger las bombillas que son preguntas\n3. -Las preguntas si se costestan correctamente gana 3 segundos de combustible\n    -Las preguntas si se contestan incorrectamente pierde 5 segundos de combustible\n4. Obtener el mejor puntaje de Jugando Aprendo");
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
