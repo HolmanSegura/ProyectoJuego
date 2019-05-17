@@ -9,26 +9,25 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
-import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import javax.swing.JButton;
 
 public class Logica extends JPanel implements Runnable, KeyListener {
 
-    private Image carro;
+    private Image carro, fondo;
     private Thread hilo;
     private int x, y;
-    private final int RETARDO = 5;
+    private final int RETARDO = 15;
 
     public Logica() {
-        setBackground(Color.GRAY);
+        setBackground(Color.WHITE);
         setDoubleBuffered(true);
-        carro = new ImageIcon(this.getClass().getResource("/imagenes/carro.jpg")).getImage();
-        x = 600;
-        y = 200;
+        fondo = new ImageIcon(this.getClass().getResource("/imagenes/asfalto.jpg")).getImage();
+        carro = new ImageIcon(this.getClass().getResource("/imagenes/carro2v.png")).getImage();
+        x = 350;
+        y = 220;
         addKeyListener(this);
         setFocusable(true);
     }
@@ -44,27 +43,24 @@ public class Logica extends JPanel implements Runnable, KeyListener {
             System.out.println("Presion� Espacio!");
         }
 
-        if (key == KeyEvent.VK_UP) {
-            if (y > 0 + 5) {
-                y -= 10;
-            }
-            System.out.println("Presion� UP!");
-        }
         if (key == KeyEvent.VK_DOWN) {
-            if (y < 500 - 130) {
+            if (y < 700 - 130) {
                 y += 10;
+                carro = new ImageIcon(this.getClass().getResource("/imagenes/carro2v.png")).getImage();
             }
             System.out.println("Presion� DOWN!");
         }
         if (key == KeyEvent.VK_LEFT) {
             if (x > 0 + 5) {
                 x -= 10;
+                carro = new ImageIcon(this.getClass().getResource("/imagenes/carro2I.png")).getImage();
             }
             System.out.println("Presion� LEFT!");
         }
         if (key == KeyEvent.VK_RIGHT) {
-            if (x < 500 - 130) {
+            if (x < 830 - 130) {
                 x += 10;
+                carro = new ImageIcon(this.getClass().getResource("/imagenes/carro2D.png")).getImage();
             }
             System.out.println("Presion� RIGHT!");
         }
@@ -92,13 +88,18 @@ public class Logica extends JPanel implements Runnable, KeyListener {
     public void paint(Graphics g) {
         super.paint(g);
         Graphics2D g2 = (Graphics2D) g;
+        g2.drawImage(fondo, 50, 0, null);
         g2.drawImage(carro, x, y, null);
+        
         //Toolkit.getDefaultToolkit().sync();
         //g.dispose();
     }
 
     public void ciclo() {
-        
+        y += 1;
+        if (y > (500 + 70)) {
+            y = +70;
+        }
     }
 
     @Override
