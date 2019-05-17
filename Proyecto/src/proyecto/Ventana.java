@@ -11,17 +11,20 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Ventana extends JFrame {
 
     public Ventana() {
+
         setTitle("Proyecto juego");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(600, 600);
+        setSize(800, 600);
         setLocationRelativeTo(null);
         setResizable(false);
         add(new Logica());
         setVisible(true);
+
     }
 
     //METODO PRINCIPAL - SERA BUSCADO AL EJECUTAR UN PROGRAMA EN JAVA
     public static void main(String args[]) {
         new Ventana();
     }
+
 }
