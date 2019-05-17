@@ -5,8 +5,13 @@ package proyecto;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import java.awt.Font;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import javax.swing.JFrame;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
+import javax.swing.JLabel;
 
 public class Ventana extends JFrame {
 
@@ -20,7 +25,11 @@ public class Ventana extends JFrame {
         add(new Logica());
         setVisible(true);
         
+      
+        
     }
+ 
+
 
     //METODO PRINCIPAL - SERA BUSCADO AL EJECUTAR UN PROGRAMA EN JAVA
     public static void main(String args[]) {
