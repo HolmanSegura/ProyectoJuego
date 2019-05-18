@@ -80,9 +80,9 @@ public class actualizar extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
      File fichero = new File("Base_de_Datos.txt");
       if (fichero.delete())
-      JOptionPane.showMessageDialog(null,"El fichero ha sido borrado satisfactoriamente");
+      JOptionPane.showMessageDialog(null,"La Base de Datos a sido borrada");
       else
-      JOptionPane.showMessageDialog(null,"El fichero no puede ser borrado");
+      JOptionPane.showMessageDialog(null,"La Base de Datos no pudo ser borrada");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

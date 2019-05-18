@@ -402,13 +402,14 @@ public class Logica extends JPanel implements Runnable, KeyListener, LogicaI {
 
                     }
                     JOptionPane.showMessageDialog(null, "Fin del juego!");
-
-                    System.exit(0);
-
+           
+     
+          
                 }
             } catch (InterruptedException err) {
                 System.out.println(err);
             }
+             
             try {
                 if (colisionP()) {
                     boolean validador = pregunta(index);
@@ -427,9 +428,11 @@ public class Logica extends JPanel implements Runnable, KeyListener, LogicaI {
             } catch (InterruptedException err) {
                 System.out.println(err);
             }
+            
         }
-    }
+        }
 
+         
     @Override
     public void guardar() {
         String dato; //variable para almacenar nombre y apellido

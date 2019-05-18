@@ -1,0 +1,64 @@
+Nombre: Hector
+Equipo: Udec
+Puntos: 376.60000000001713
+Fecha: Viernes - 17 de Mayo del 2019 ,
+-------------------------
+-------------------------
+Nombre: prueba
+Equipo: prueba2
+Puntos: 360.1000000000134
+Fecha: Viernes - 17 de Mayo del 2019 ,
+-------------------------
+-------------------------
+Nombre: null
+Equipo: null
+Puntos: 360.2000000000134
+Fecha: Viernes - 17 de Mayo del 2019 ,
+-------------------------
+-------------------------
+Nombre: null
+Equipo: null
+Puntos: 360.3000000000134
+Fecha: Viernes - 17 de Mayo del 2019 ,
+-------------------------
+-------------------------
+Nombre:  Nombre del Usuario
+Equipo:  Nombre del Equipo
+Puntos: 360.1000000000134
+Fecha: Viernes - 17 de Mayo del 2019 ,
+-------------------------
+-------------------------
+Nombre: null
+Equipo: null
+Puntos: 360.2000000000134
+Fecha: Viernes - 17 de Mayo del 2019 ,
+-------------------------
+-------------------------
+Nombre:  Nombre del Usuario
+Equipo:  Nombre del Equipo
+Puntos: 360.1000000000134
+Fecha: Viernes - 17 de Mayo del 2019 ,
+-------------------------
+-------------------------
+Nombre:  Nombre del Usuario
+Equipo:  Nombre del Equipo
+Puntos: 360.1000000000134
+Fecha: Viernes - 17 de Mayo del 2019 ,
+-------------------------
+-------------------------
+Nombre:  Nombre del Usuario
+Equipo:  Nombre del Equipo
+Puntos: 360.2000000000134
+Fecha: Viernes - 17 de Mayo del 2019 ,
+-------------------------
+-------------------------
+Nombre:  Nombre del Usuario
+Equipo:  Nombre del Equipo
+Puntos: 360.3000000000134
+Fecha: Viernes - 17 de Mayo del 2019 ,
+-------------------------
+-------------------------
+Nombre:  Nombre del Usuario
+Equipo:  Nombre del Equipo
+Puntos: 360.40000000001345
+Fecha: Viernes - 17 de Mayo del 2019 ,
