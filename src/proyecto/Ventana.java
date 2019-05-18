@@ -18,7 +18,6 @@ public class Ventana extends JFrame {
         setTitle("Proyecto juego");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(800, 600);
-       
         setLocationRelativeTo(null);
         setResizable(false);
         add(new Logica());

@@ -81,7 +81,7 @@ public class Logica extends JPanel implements Runnable, KeyListener, LogicaI {
         carro7 = new ImageIcon(this.getClass().getResource("/imagenes/auto7.jpg")).getImage();
         carro8 = new ImageIcon(this.getClass().getResource("/imagenes/auto8.jpg")).getImage();
         xC = 375;
-        yC = 400;
+        yC = 450;
         xP = 250;
         yP = 0;
         yQ = 0;
@@ -402,9 +402,7 @@ public class Logica extends JPanel implements Runnable, KeyListener, LogicaI {
 
                     }
                     JOptionPane.showMessageDialog(null, "Fin del juego!");
-           
-     
-          
+                    System.exit(0);
                 }
             } catch (InterruptedException err) {
                 System.out.println(err);
@@ -488,7 +486,7 @@ public class Logica extends JPanel implements Runnable, KeyListener, LogicaI {
                 tiempo += 3000;
                 return true;
             } else {
-                JOptionPane.showMessageDialog(null, "Error!");
+                JOptionPane.showMessageDialog(null, "Respuesta equivocada");
                 tiempo -= 5000;
                 return true;
             }
