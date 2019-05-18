@@ -366,7 +366,7 @@ public class Logica extends JPanel implements Runnable, KeyListener, LogicaI {
                     String[] dias = {"", "Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"};
                     String[] meses = {"", "Enero", "Febrero", "Marzo", "Abril", "Mayo", "junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
                     fecha = ((dias[(calendar.get(7))] + " - " + (calendar.get(5)) + " de " + meses[(calendar.get(2) + 1)] + " del " + (calendar.get(1)) + " ,"));
-                    archivo = new File("Base de Datos.txt");
+                    archivo = new File("Base_de_Datos.txt");
                     if (!archivo.exists()) {
                         try {
                             archivo.createNewFile();
