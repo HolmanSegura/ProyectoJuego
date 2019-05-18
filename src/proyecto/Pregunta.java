@@ -27,6 +27,18 @@ public class Pregunta {
         return respuesta;
     }
 
+    public void setRespuesta(String respuesta) {
+        this.respuesta = respuesta;
+    }
+
+    public void setPregunta(String pregunta) {
+        this.pregunta = pregunta;
+    }
+
+    public void setOpcionesR(String opcionesR) {
+        this.opcionesR = opcionesR;
+    }
+
     public String getPregunta() {
         return pregunta;
     }

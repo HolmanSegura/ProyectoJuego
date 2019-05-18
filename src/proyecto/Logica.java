@@ -31,7 +31,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-public class Logica extends JPanel implements Runnable, KeyListener {
+public class Logica extends JPanel implements Runnable, KeyListener, LogicaI {
 
     private Image carro, carro1, carro2, carro3, carro4, carro5, carro6, carro7, carro8, pista, arbusto, pregunta;
     private Thread hilo;
@@ -146,7 +146,7 @@ public class Logica extends JPanel implements Runnable, KeyListener {
             return true;
         } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 50, yV - 1965, 30, 1))) {
             return true;
-        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 200, yV - 3365, 30, 1))) {
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 100, yV - 3365, 30, 1))) {
             return true;
         } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 250, yV - 4965, 30, 1))) {
             return true;
@@ -156,7 +156,7 @@ public class Logica extends JPanel implements Runnable, KeyListener {
             return true;
         } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 40, yV - 9964, 30, 1))) {
             return true;
-        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 250, yV - 10965, 30, 1))) {
+        } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 120, yV - 10965, 30, 1))) {
             return true;
         } else if (new Rectangle(xC, yC, 50, 1).intersects(new Rectangle(xP + 90, yV - 12365, 30, 1))) {
             return true;
@@ -253,24 +253,30 @@ public class Logica extends JPanel implements Runnable, KeyListener {
         Graphics2D g2 = (Graphics2D) g;
         g2.drawImage(pista, xP, yP, null);
         g2.drawImage(carro, xC, yC, null);
-        g2.drawImage(arbusto, xP - 200, yV - 40, null);
-        g2.drawImage(arbusto, xP + 300, yV - 200, null);
-        g2.drawImage(arbusto, xP - 200, yV - 800, null);
-        g2.drawImage(arbusto, xP - 100, yV - 650, null);
-        g2.drawImage(arbusto, xP - 180, yV - 230, null);
         g2.drawImage(arbusto, xP + 350, yV - 400, null);
-        g2.drawImage(arbusto, xP + 300, yV - 1000, null);
-        g2.drawImage(arbusto, xP + 400, yV - 750, null);
+        g2.drawImage(arbusto, xP - 200, yV - 1000, null);
+        g2.drawImage(arbusto, xP + 300, yV - 2000, null);
+        g2.drawImage(arbusto, xP - 180, yV - 3000, null);
+        g2.drawImage(arbusto, xP + 380, yV - 4000, null);
+        g2.drawImage(arbusto, xP - 180, yV - 5000, null);
+        g2.drawImage(arbusto, xP + 350, yV - 6000, null);
+        g2.drawImage(arbusto, xP - 150, yV - 7000, null);
+        g2.drawImage(arbusto, xP + 360, yV - 8000, null);
+        g2.drawImage(arbusto, xP + 300, yV - 10000, null);
+        g2.drawImage(arbusto, xP - 180, yV - 11000, null);
+        g2.drawImage(arbusto, xP + 380, yV - 12000, null);
+        g2.drawImage(arbusto, xP - 180, yV - 13000, null);
+        g2.drawImage(arbusto, xP + 350, yV - 14000, null);
 
         g2.drawImage(pregunta, xP + 90, yV - 400, null);
         g2.drawImage(pregunta, xP + 120, yV - 1000, null);
         g2.drawImage(pregunta, xP + 50, yV - 2000, null);
-        g2.drawImage(pregunta, xP + 200, yV - 3400, null);
+        g2.drawImage(pregunta, xP + 100, yV - 3400, null);
         g2.drawImage(pregunta, xP + 250, yV - 5000, null);
         g2.drawImage(pregunta, xP + 70, yV - 7500, null);
         g2.drawImage(pregunta, xP + 20, yV - 8100, null);
         g2.drawImage(pregunta, xP + 40, yV - 9999, null);
-        g2.drawImage(pregunta, xP + 250, yV - 11000, null);
+        g2.drawImage(pregunta, xP + 120, yV - 11000, null);
         g2.drawImage(pregunta, xP + 90, yV - 12400, null);
 
         g2.drawImage(carro1, xP + 200, yV - 100, null);
@@ -429,6 +435,7 @@ public class Logica extends JPanel implements Runnable, KeyListener {
         }
     }
 
+    @Override
     public void guardar() {
         String dato; //variable para almacenar nombre y apellido
         String cadena; //nombre;apellido
@@ -463,6 +470,7 @@ public class Logica extends JPanel implements Runnable, KeyListener {
         }
     }
 
+    @Override
     public boolean choque(int index) {
         try {
             JOptionPane.showMessageDialog(null, "Chocaste: -10 segundos");
@@ -473,6 +481,7 @@ public class Logica extends JPanel implements Runnable, KeyListener {
         return true;
     }
 
+    @Override
     public boolean pregunta(int index) {
         try {
             String preg = JOptionPane.showInputDialog(preguntas.get(index).getPregunta() + preguntas.get(index).getOpcionesR());
@@ -490,11 +499,13 @@ public class Logica extends JPanel implements Runnable, KeyListener {
         return true;
     }
 
+    @Override
     public double puntuacion(double i) {
         puntos += i;
         return puntos;
     }
 
+    @Override
     public String tiempo(int i) {
         String cad = "Tiempo: ";
         aux += i;
