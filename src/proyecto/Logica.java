@@ -24,15 +24,12 @@ import java.io.PrintWriter;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
 public class Logica extends JPanel implements Runnable, KeyListener, LogicaI {
-
     private Image carro, carro1, carro2, carro3, carro4, carro5, carro6, carro7, carro8, pista, arbusto, pregunta;
     private Thread hilo;
     private int xC, yC, xP, yP, yV, yQ, total = 0, tiempo = 120000, tiempo2 = 120000, aux = 0, min, seg, aux2;
@@ -337,9 +334,7 @@ public class Logica extends JPanel implements Runnable, KeyListener, LogicaI {
             yV = -50;
         }
     }
-    public String dato;
-    public String cadena;
-
+    
     @Override
     public void run() {
         int index = 0;
